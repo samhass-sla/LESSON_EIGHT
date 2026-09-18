@@ -290,7 +290,7 @@ const conversionChartOptions = {
     <v-main class="bg-grey-lighten-4 main-shell">
       <v-container class="py-8 main-container">
         <v-row class="mb-8 metrics-row">
-          <v-col v-for="card in mainCards" :key="card.title" cols="12" sm="6" md="3">
+          <v-col v-for="card in mainCards" :key="card.title" class="metric-col" cols="12" sm="6" md="3">
             <v-card class="pa-4 rounded-xl" flat elevation="0" color="white">
               <div class="d-flex align-center justify-space-between mb-3">
                 <span class="metric-label">{{ card.title }}</span>
@@ -312,7 +312,7 @@ const conversionChartOptions = {
         </v-row>
 
         <v-row class="mb-6">
-          <v-col cols="12" lg="7">
+          <v-col cols="12">
             <v-card flat class="pa-4 rounded-xl" color="white">
               <div class="d-flex justify-space-between align-center mb-4">
                 <div>
@@ -325,8 +325,10 @@ const conversionChartOptions = {
               </div>
             </v-card>
           </v-col>
+        </v-row>
 
-          <v-col cols="12" lg="5">
+        <v-row class="mb-6">
+          <v-col cols="12">
             <v-card flat class="pa-4 rounded-xl" color="white">
               <div class="mb-4">
                 <div class="text-caption text-grey-darken-1">Visitors</div>
@@ -420,11 +422,16 @@ const conversionChartOptions = {
   color: #616161;
 }
 
+.metric-col {
+  min-width: 0;
+}
+
 .metric-value {
-  font-size: clamp(1.8rem, 2vw, 2.5rem);
+  font-size: clamp(1.65rem, 2vw, 2.5rem);
   font-weight: 800;
   line-height: 1.1;
   color: #1f2937;
+  white-space: nowrap;
 }
 
 .metric-trend {
@@ -443,5 +450,13 @@ const conversionChartOptions = {
 
 .chart-panel.wide {
   height: 280px;
+}
+
+@media (max-width: 1099px) {
+  .metrics-row > .metric-col {
+    flex-basis: calc(50% - 12px);
+    max-width: calc(50% - 12px);
+    width: calc(50% - 12px);
+  }
 }
 </style>
