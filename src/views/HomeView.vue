@@ -268,7 +268,7 @@ const conversionChartOptions = {
       <v-container class="py-0">
         <v-row align="center" class="header-row">
           <v-col cols="12" md="6">
-            <div class="dashboard-title">Dashboard</div>
+            <div class="dashboard-title">FastForward Logistics Dashboard</div>
           </v-col>
           <v-col cols="12" md="6" class="d-flex justify-end">
             <v-select
